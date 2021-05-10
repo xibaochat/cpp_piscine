@@ -2,36 +2,32 @@
 
 Pony::~Pony()
 {
-	std::cout << "instance is destroyed" << std::endl;
+	std::cout << "instance is destroyed :(" << std::endl;
 }
 
 void Pony::ShowInfo(void)
 {
-	std::cout << "name:" << this->_name << std::endl;
-	std::cout << "sex" << this->_sex << std::endl;
-	std::cout << "color:" << this->_color << std::endl;
-	std::cout << "age:" << this->_age << std::endl;
-	std::cout << "weight:" << this->_weight << std::endl;
+	std::cout << "Name:" << this->_name << std::endl;
+	std::cout << "Sex:" << this->_sex << std::endl;
+	std::cout << "Color:" << this->_color << std::endl;
+	std::cout << "Age:" << this->_age << std::endl;
+	std::cout << "Weight:" << this->_weight << std::endl;
 }
 
-Pony::Pony(std::string name, std::string sex, std::string color, int age, int weight):_name(name), _sex(sex), _color(color), _age(age), _weight(weight)
+Pony::Pony(std::string name, std::string sex, std::string color, int age, int weight, std::string call):_name(name), _sex(sex), _color(color), _age(age), _weight(weight), _call(call)
 {}
 
-void ponyOnTheHeap()
+void Pony::Pony_eat(void)
 {
-	Pony instance("Maobe", "F", "pink", 1, 2);
-	instance.ShowInfo();
+	std::cout << this->_name << " " << this->_call << " is eating:D" << std::endl;
 }
 
-void ponyOnTheStack()
+void Pony::Pony_sleep(void)
 {
-	Pony *pony = new Pony("petit pony", "M", "golded", 2, 2);
-	pony->ShowInfo();
-	delete pony;
+	std::cout << this->_name << " " << this->_call <<" is sleeping zzz" << std::endl;
 }
 
-int main()
+void Pony::Pony_play(void)
 {
-	ponyOnTheHeap();
-	ponyOnTheStack();
+	std::cout << this->_name << " " << this->_call << " is playing happily ::DD" << std::endl;
 }

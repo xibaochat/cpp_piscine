@@ -10,12 +10,16 @@ private:
 	std::string _name;
 	std::string _sex;
 	std::string _color;
-	int _age;
-	int _weight;
+	int			_age;
+	int			_weight;
+	std::string _call;
 public:
-	Pony(std::string, std::string, std::string, int, int);
+	Pony(std::string, std::string, std::string, int, int, std::string);
 	~Pony();
-	void ShowInfo(void);
+	void 		ShowInfo(void);
+	void		Pony_eat(void);
+	void		Pony_sleep(void);
+	void		Pony_play(void);
 };
 
 #endif
