@@ -8,7 +8,9 @@ void ZombieEvent::setZombieType(std::string z_type)
 
 Zombie* ZombieEvent::newZombie(std::string name)
 {
-	Zombie* instance = new Zombie(name, this->_type);
+	Zombie* instance = new Zombie;
+	instance->set_name(name);
+	instance->set_type(this->_type);
 
 	return (instance);
 }

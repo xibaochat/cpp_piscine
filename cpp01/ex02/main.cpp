@@ -7,21 +7,27 @@ void randomChump()
 
 	srand(time(NULL));
 	rand_index = rand() % 10;
-	Zombie instance(name_arr[rand_index], "animal");
+	Zombie instance;
+	instance.set_name(name_arr[rand_index]);
+	instance.set_type("animal");
 	instance.announce();
 }
 
 int main()
 {
-	Zombie		petit_zombie("Teletubbies", "television series");
-	Zombie		middle_zombie("Noddy", "fictional character");
+	Zombie		petit_zombie;
+	Zombie		middle_zombie;
 	ZombieEvent	big_event;
 	Zombie*		zombie_event_ptr;
-	int i;
 
-	i = -1;
+	petit_zombie.set_name("Teletubbies");
+	petit_zombie.set_type("television series");
 	petit_zombie.announce();
+
+	middle_zombie.set_name("Noddy");
+	middle_zombie.set_type("fictional character");
 	middle_zombie.announce();
+
 	big_event.setZombieType("chanteuse");
 	zombie_event_ptr = big_event.newZombie("Hélène");
 	zombie_event_ptr->announce();

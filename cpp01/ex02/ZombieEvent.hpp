@@ -12,5 +12,4 @@ public:
 	Zombie* newZombie(std::string);
 };
 
-
 #endif
