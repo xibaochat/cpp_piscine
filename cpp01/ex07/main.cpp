@@ -1,55 +1,51 @@
 #include <iostream>
 #include <fstream>
-
-int get_lens(char *argv)
-{
-	int count = 0;
-	while(argv[++count])
-		;
-	return (count);
-}
+#include <string>
 
 int main(int ac, char **av)
 {
 	if (ac != 4)
-		return (0);
-	std::string line;
-	std::ifstream myfile (av[1]);
-	std::ofstream replace_file ("FILENAME.replace");
-	if (!myfile.good() || !replace_file.good())
 	{
-		std::cout << "stream is not good";
+		std::cout << "wring number of arguments" << std::endl;
 		return (0);
 	}
-	if (myfile.is_open())
+	std::string line;
+	std::string to_remove(av[2]);
+    std::string to_add(av[3]);
+	std::string file_name(av[1]);
+	std::string content;
+	size_t p = 0;
+	if (to_remove.length() == 0 || to_add.length() == 0 || file_name.length() == 0)
+    {
+        std::cout << "Don't give empty string please" << std::endl;
+        return (0);
+   }
+	std::ifstream ifs;
+    std::ofstream fs;
+
+	ifs.open(av[1]);
+	file_name +=  ".replace";
+	fs.open(file_name.c_str());
+	if (ifs.is_open())
 	{
-		while ( getline (myfile,line) )
-		{
-			replace_file << line << std::endl;
-		}
-		myfile.close();
+		while ( getline (ifs,line) )
+			content.append(line + "\n");
 	}
 	else
 	{
-		std::cout << "Unable to open file";
+		std::cout << "Cannot open the file" << std::endl;
 		return (0);
 	}
+	ifs.close();
+	if (to_remove.compare(to_add))
+	 {
+		 while ((p = content.find(to_remove, p)) != std::string::npos)
+		 {
+			 content.replace(p, to_remove.length(), to_add);
+			 p += to_add.length();
 
-	std::ifstream r_myfile ("FILENAME.replace");
-	std::ofstream w_myfile ("WFILENAME.replace");
-	if (r_myfile.good())
-	{
-		while (getline(r_myfile, line))
-		{
-			size_t p = line.find(av[2]);
-			while (p != std::string::npos)
-			{
-				line.replace(p, get_lens(av[2]), av[3]);
-				std::cout << line << std::endl;
-				p = line.find(av[2], p + get_lens(av[3]));
-			}
-			w_myfile << line << std::endl;
-		}
-	}
-	return 0;
+		 }
+	 }
+	fs << content;
+	fs.close();
 }
