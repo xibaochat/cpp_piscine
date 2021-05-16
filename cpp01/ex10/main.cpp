@@ -22,6 +22,11 @@ int ft_cat(int ac, char **av)
 
 			return_value = 1;
 		}
+		if(myfile.fail())
+		{
+			std::cout << "cat: " << av[i] << ": Permission denied" << std::endl;
+			return_value = 1;
+		}
 		else if (myfile.is_open())
 		{
 			while (getline(myfile, line))
