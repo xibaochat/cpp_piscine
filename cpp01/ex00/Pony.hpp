@@ -7,19 +7,19 @@
 class Pony
 {
 private:
-	std::string _name;
-	std::string _sex;
-	std::string _color;
-	int			_age;
-	int			_weight;
-	std::string _call;
+	std::string const _name;
+	std::string const _sex;
+	std::string const _color;
+	int			const _age;
+	int			const _weight;
+	std::string const  _call;
 public:
-	Pony(std::string, std::string, std::string, int, int, std::string);
+	Pony(std::string const, std::string const, std::string const, int const, int const, std::string const);
 	~Pony();
-	void 		ShowInfo(void);
-	void		Pony_eat(void);
-	void		Pony_sleep(void);
-	void		Pony_play(void);
+	void 		ShowInfo(void) const;
+	void		Pony_eat(void) const;
+	void		Pony_sleep(void) const;
+	void		Pony_play(void) const;
 };
 
 #endif
