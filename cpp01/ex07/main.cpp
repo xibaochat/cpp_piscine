@@ -37,15 +37,19 @@ int main(int ac, char **av)
 		return (0);
 	}
 	ifs.close();
-	if (to_remove.compare(to_add))
+	if (fs.is_open())
 	 {
-		 while ((p = content.find(to_remove, p)) != std::string::npos)
+		 if (to_remove.compare(to_add))
 		 {
-			 content.replace(p, to_remove.length(), to_add);
-			 p += to_add.length();
+			 while ((p = content.find(to_remove, p)) != std::string::npos)
+			 {
 
+				 content.replace(p, to_remove.length(), to_add);
+				 p += to_add.length();
+			 }
 		 }
+		 fs << content;
+		 fs.close();
 	 }
-	fs << content;
-	fs.close();
+	return (0);
 }

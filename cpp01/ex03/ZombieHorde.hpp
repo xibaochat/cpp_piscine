@@ -9,7 +9,7 @@ private:
 	Zombie *zombie_arr;
 	int nb_z;
 public:
-	ZombieHorde(int);
+	ZombieHorde(int const);
 	~ZombieHorde();
 	void announce(void) const;
 };

@@ -6,7 +6,7 @@
 class Human
 {
 private:
-	Brain brain;
+	Brain const brain;
 public:
 	const Brain & getBrain(void) const;
 	const std::string identify(void) const;

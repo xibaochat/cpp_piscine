@@ -6,13 +6,13 @@ void	Zombie::announce(void) const
 	return ;
 }
 
-void Zombie::set_name(std::string name)
+void Zombie::set_name(std::string const name)
 {
 	this->_name = name;
 	return ;
 }
 
-void Zombie::set_type(std::string type)
+void Zombie::set_type(std::string const type)
 {
 	this->_type = type;
 	return ;

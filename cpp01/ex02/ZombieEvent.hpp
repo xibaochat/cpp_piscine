@@ -6,10 +6,10 @@
 class ZombieEvent
 {
 private:
-	std::string _type;
+	std::string  _type;
 public:
-	void setZombieType(std::string);
-	Zombie* newZombie(std::string);
+	void setZombieType(std::string const);
+	Zombie* newZombie(std::string );
 };
 
 #endif

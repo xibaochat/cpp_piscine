@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
-void ZombieEvent::setZombieType(std::string z_type)
+void ZombieEvent::setZombieType(std::string const z_type)
 {
 	this->_type = z_type;
 }

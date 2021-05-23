@@ -9,7 +9,7 @@ int randomChump()
 	return (rand_index);
 }
 
-ZombieHorde::ZombieHorde(int nb) : nb_z(nb)
+ZombieHorde::ZombieHorde(int const nb) : nb_z(nb)
 {
 	int i;
 

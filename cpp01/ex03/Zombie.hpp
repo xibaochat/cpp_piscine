@@ -17,9 +17,8 @@ private:
 	std::string _type;
 
 public:
-//	Zombie(std::string, std::string);
-	void set_name(std::string);
-	void set_type(std::string);
+	void set_name(std::string const);
+	void set_type(std::string const);
 	void announce(void)const;
 };
 

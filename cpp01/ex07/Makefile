@@ -19,6 +19,5 @@ fclean: clean
 	@/bin/rm -f $(NAME)
 	@/bin/rm -f *~
 	@/bin/rm -f *#
-	@/bin/rm *.replace
 
 re: fclean all

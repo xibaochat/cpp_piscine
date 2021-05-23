@@ -13,12 +13,12 @@ const std::string name_arr[10] = {
 class Zombie
 {
 private:
-	std::string _name;
-	std::string _type;
+	std::string  _name;
+	std::string  _type;
 
 public:
-	void set_name(std::string);
-	void set_type(std::string);
+	void set_name(std::string const);
+	void set_type(std::string const);
 	void announce(void)const;
 };
 
