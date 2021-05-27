@@ -42,4 +42,6 @@ public:
 	void show_info(void);
 };
 
+void	truncate(std::string str, size_t width);
+
 #endif

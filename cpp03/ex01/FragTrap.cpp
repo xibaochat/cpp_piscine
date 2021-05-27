@@ -50,7 +50,7 @@ FragTrap::FragTrap(FragTrap const &src)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout <<  "Destruction de FR4G-TP " << BLUE << this->_name << NC << std::endl;
+	std::cout <<  "Frag-TP Destruction de FR4G-TP " << BLUE << this->_name << NC << std::endl;
 	return ;
 }
 

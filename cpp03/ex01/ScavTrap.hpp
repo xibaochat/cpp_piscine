@@ -1,5 +1,5 @@
-#ifndef FRAGTRAP_H
-# define FRAGTRAP_H
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 
 #include <iostream>
 #include <stdlib.h>
@@ -15,7 +15,7 @@
 #define MAGENTA     "\e[95m"
 #define BLUE		"\033[1;34m"
 #define NC          "\033[0m"
-class FragTrap
+class ScavTrap
 {
 private:
 	std::string _name;
@@ -29,17 +29,23 @@ private:
 	int _armor_damage_reduction;
 
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(FragTrap const &);
-	~FragTrap(void);
-	FragTrap & operator=( FragTrap const & );
+	ScavTrap(void);
+	ScavTrap(std::string name);
+	ScavTrap(ScavTrap const &);
+	~ScavTrap(void);
+	ScavTrap & operator=( ScavTrap const & );
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	void vaulthunter_dot_exe(std::string const & target);
 	void show_info(void);
-};
+	void smell_toe(std::string const &);
+	void running_naked(std::string const &);
+	void touch_dirty_fish(std::string const &);
+	void kiss_from_a_snake(std::string const &);
+	void let_u_pass(std::string const &);
+	void challengeNewcomer(std::string const & target);
+} ;
+
 
 #endif
