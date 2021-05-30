@@ -36,8 +36,6 @@ int main()
 	robot1.show_info();
 	scav1.show_info();
 	std::cout << CYAN <<  "---------DESTRUCTOR------" << NC << std::endl;
-	//FragTrap instance1;
-	//ScavTrap instance2;
 
 	return (0);
 }

@@ -1,45 +1,37 @@
 # include "ClapTrap.hpp"
 
-void	truncate(std::string str, size_t width)
-{
-	if (str.length() > width)
-		std::cout << "|" + str.substr(0, width - 1) + ".";
-	else
-		std::cout << "|" <<  std::setw(width) << str;
-}
-
 void Claptraps::show_info(void)
 {
-	std::string str;
-	std::stringstream ss;
-	std::stringstream ss1;
-
-	truncate("NAME", 10);
-	truncate("HP", 10);
-	truncate("EP", 10);
-	std::cout << "|" << std::endl;
-	truncate(this->_name, 10);
-	ss << this->_hit_points;
-	truncate(ss.str() + "/100", 10);
-	ss1 << this->_energy_points;
-	truncate(ss1.str() + "/100", 10);
-	std::cout << "|" << std::endl;
+	std::cout << "name:" << BLUE << this->_name << NC << std::endl;
+	std::cout << "HP     :" << GREEN << this->_hit_points << NC << std::endl;
+	std::cout << "EP     :" << YELLOW << this->_energy_points << NC << std::endl;
 }
 
 Claptraps::Claptraps(void){
 	std::cout << "ClapTrap defaut constructoris called" << std::endl;
 	return ;}
 
-Claptraps::Claptraps(std::string name):_name(name)
+Claptraps::Claptraps(
+	int hp,
+	int max_hp,
+	int ep,
+	int max_ep,
+	int level,
+	std::string name,
+	unsigned int melee_att,
+	unsigned int range_att,
+	unsigned int armor
+	):
+	_hit_points(hp),
+	_max_hit_points(max_hp),
+	_energy_points(ep),
+	_max_energy_points(max_ep),
+	_level(level),
+	_name(name),
+	_melee_attack_damage(melee_att),
+	_ranged_attack_damage(range_att),
+	_armor_damage_reduction(armor)
 {
-	this->_hit_points = 100;
-	this->_max_hit_points = 100;
-	this->_energy_points = 100;
-	this->_max_energy_points = 100;
-	this->_level = 1;
-	this->_melee_attack_damage = 30;
-	this->_ranged_attack_damage = 20;
-	this->_armor_damage_reduction = 5;
 	std::cout << "Clap_TP Constructor :" << BLUE << name << NC <<  " is online" << std::endl;
 	return ;
 }
@@ -52,7 +44,7 @@ Claptraps::Claptraps(Claptraps const &src)
 
 Claptraps::~Claptraps(void)
 {
-	std::cout <<  "Claptraps Destruction is called " << BLUE << this->_name << NC << "un claptraps object is mort" << std::endl;
+	std::cout <<  "Claptraps Destruction is called " << BLUE << this->_name << NC << " un claptraps object is mort" << std::endl;
 	return ;
 }
 

@@ -1,32 +1,15 @@
 # include "FragTrap.hpp"
 
-void	truncate(std::string str, size_t width)
-{
-	if (str.length() > width)
-		std::cout << "|" + str.substr(0, width - 1) + ".";
-	else
-		std::cout << "|" <<  std::setw(width) << str;
-}
-
 void FragTrap::show_info(void)
 {
-	std::string str;
-	std::stringstream ss;
-	std::stringstream ss1;
-
-	truncate("NAME", 10);
-	truncate("HP", 10);
-	truncate("EP", 10);
-	std::cout << "|" << std::endl;
-	truncate(this->_name, 10);
-	ss << this->_hit_points;
-	truncate(ss.str() + "/100", 10);
-	ss1 << this->_energy_points;
-	truncate(ss1.str() + "/100", 10);
-	std::cout << "|" << std::endl;
+	std::cout << "name:" << BLUE << this->_name << NC << std::endl;
+	std::cout << "HP     :" << GREEN << this->_hit_points << NC << std::endl;
+	std::cout << "EP     :" << YELLOW << this->_energy_points << NC << std::endl;
 }
 
-FragTrap::FragTrap(void){return ;}
+FragTrap::FragTrap(void){
+	std::cout <<  "Frag-TP a " << BLUE << "passager" << NC << "come to see what is happening" << std::endl;
+	return ;}
 
 FragTrap::FragTrap(std::string name):_name(name)
 {
@@ -38,7 +21,7 @@ FragTrap::FragTrap(std::string name):_name(name)
 	this->_melee_attack_damage = 30;
 	this->_ranged_attack_damage = 20;
 	this->_armor_damage_reduction = 5;
-	std::cout << "new player:" << BLUE << name << NC <<  " is joining in the war!! Now Let's fight" << std::endl;
+	std::cout << "Frag-TP new player:" << BLUE << name << NC <<  " is joining in the war!! Now Let's fight" << std::endl;
 	return ;
 }
 
@@ -116,10 +99,10 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 							   " avec un bisous de mechant ange", " avec un cocktail toxique"};
 	if (this->_energy_points >= 25)
 	{
-		std::cout << "FR4G-TP " << BLUE << this->_name << NC << " attack " << RED << target << NC << actionStr[rand_index] << std::endl;;
 		this->_energy_points -= 25;
-
+		std::cout << "FR4G-TP " << BLUE << this->_name << NC << " attack " << RED << target << NC << actionStr[rand_index] << std::endl << "FR4G-TP" << BLUE << this->_name << YELLOW << " EP: " << this->_energy_points << NC << std::endl;
 	}
 	else
-		std::cout << "FR4G-TP " << BLUE << this->_name << NC << " a plus d'energie pour lancer cette action :(..." << std::endl;
+		std::cout << "FR4G-TP " << BLUE << this->_name << YELLOW << " EP : 0" << NC << " a plus d'energie pour lancer cette action :(..." << NC << std::endl;
+	return ;
 }

@@ -1,13 +1,14 @@
 # include "FragTrap.hpp"
 # include "ClapTrap.hpp"
 
-FragTrap::FragTrap(void)
+FragTrap::FragTrap(void):Claptraps(100, 100, 100, 100, 1, "anonymous guy", 30, 20, 5)
 {
 	std::cout << "Frag-TP Defaut constructor is called" << std::endl;
 	return ;
 }
 
-FragTrap::FragTrap(std::string name): Claptraps(name)
+FragTrap::FragTrap(std::string name)
+	: Claptraps(100, 100, 100, 100, 1, name, 30, 20, 5)
 {
 	std::cout << "Frag-TP Constructor :" << BLUE << name<< NC << std::endl;
 	return ;
@@ -17,7 +18,7 @@ FragTrap::FragTrap(FragTrap const &src): Claptraps(src){return ;}
 
 FragTrap::~FragTrap(void)
 {
-	std::cout <<  "Frag-TP Destruction " << BLUE << this->_name << NC << "in fragtrap object is mort" << std::endl;
+	std::cout <<  "Frag-TP Destruction " << BLUE << this->_name << NC << " in fragtrap object is mort" << std::endl;
 	return ;
 }
 

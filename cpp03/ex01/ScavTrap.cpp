@@ -3,34 +3,27 @@
 
 void ScavTrap::show_info(void)
 {
-	std::string str;
-	std::stringstream ss;
-	std::stringstream ss1;
-
-	truncate("NAME", 10);
-	truncate("HP", 10);
-	truncate("EP", 10);
-	std::cout << "|" << std::endl;
-	truncate(this->_name, 10);
-	ss << this->_hit_points;
-	truncate(ss.str() + "/100", 10);
-	ss1 << this->_energy_points;
-	truncate(ss1.str() + "/100", 10);
-	std::cout << "|" << std::endl;
+	std::cout << "name:" << BLUE << this->_name << NC << std::endl;
+	std::cout << "HP     :" << GREEN << this->_hit_points << NC << std::endl;
+	std::cout << "EP     :" << YELLOW << this->_energy_points << NC << std::endl;
+	return ;
 }
 
-ScavTrap::ScavTrap(void){return ;}
+ScavTrap::ScavTrap(void)
+{
+	std::cout <<  "Scav-TP a " << BLUE << "passager" << NC << "come to see what is happening" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name):_name(name)
 {
 	this->_hit_points = 100;
 	this->_max_hit_points = 100;
-	this->_energy_points = 100;
-	this->_max_energy_points = 100;
+	this->_energy_points = 50;
+	this->_max_energy_points = 50;
 	this->_level = 1;
-	this->_melee_attack_damage = 30;
-	this->_ranged_attack_damage = 20;
-	this->_armor_damage_reduction = 5;
+	this->_melee_attack_damage = 20;
+	this->_ranged_attack_damage = 15;
+	this->_armor_damage_reduction = 3;
 	std::cout << "Il y a un nouveau et bete volontaire: " << BLUE << name << NC << \
 		" n'ose pas mourire. \nOn verra sa triste histoire" << std::endl;
 	return ;
@@ -138,6 +131,13 @@ void ScavTrap::challengeNewcomer(std::string const & target)
 
 	rand_index = rand() % 5;
 	action_MemFn action[5] = {&ScavTrap::smell_toe, &ScavTrap::running_naked, &ScavTrap::touch_dirty_fish, &ScavTrap::kiss_from_a_snake, &ScavTrap::let_u_pass};
-	(this->*(action[rand_index]))(target);
+	if (this->_energy_points >= 25)
+	{
+		(this->*(action[rand_index]))(target);
+		this->_energy_points -= 25;
+		std::cout << "SCAV-TP " << BLUE << this->_name << YELLOW << " lost 25 EP " << NC << std::endl;;
+	}
+	else
+		std::cout << "SCAV-TP " << BLUE << this->_name << YELLOW << " a plus d'energie pour lancer cette action :(..." << NC << std::endl;
 	return ;
 }

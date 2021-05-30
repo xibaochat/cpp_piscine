@@ -24,13 +24,13 @@ protected:
 	int _energy_points;
 	int _max_energy_points;
 	int _level;
-	int _ranged_attack_damage;
-	int _melee_attack_damage;
-	int _armor_damage_reduction;
+	unsigned int _ranged_attack_damage;
+	unsigned int _melee_attack_damage;
+	unsigned int _armor_damage_reduction;
 
 public:
 	Claptraps(void);
-	Claptraps(std::string name);
+	Claptraps(int, int, int, int, int, std::string, unsigned int, unsigned int, unsigned int);
 	Claptraps(Claptraps const &);
 	virtual ~Claptraps(void);
 	Claptraps & operator=( Claptraps const & );
@@ -40,8 +40,27 @@ public:
 	void beRepaired(unsigned int amount);
 
 	void show_info(void);
-};
 
-void	truncate(std::string str, size_t width);
+	int get_hp(){ return _hit_points;}
+	int get_max_hp(){return _max_hit_points;}
+	int get_ep(){return _energy_points;}
+	int get_max_ep(){return _max_energy_points;}
+	std::string get_name(){return _name;}
+	int get_level(){return _level;}
+	unsigned int get_range_attack_damage(){return _ranged_attack_damage;}
+	unsigned int get_melee_attack_damage(){return _melee_attack_damage;}
+	unsigned int get_armor_damage_reduction(){return _armor_damage_reduction;}
+
+	void set_hp(int hp){_hit_points = hp;}
+	void set_max_hp(int hp){_max_hit_points = hp;}
+	void set_ep(int ep){_energy_points = ep;}
+	void set_max_ep(int ep){_max_energy_points = ep;}
+	void set_name(std::string name){_name = name;}
+	void set_level(int level){_level = level;}
+	void set_range_attack_damage(unsigned int v){_ranged_attack_damage = v;}
+	void set_melee_attack_damage(unsigned int v){_melee_attack_damage = v;}
+	void set_armor_damage_reduction(unsigned int v){_armor_damage_reduction = v;}
+
+};
 
 #endif

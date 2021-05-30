@@ -13,7 +13,7 @@ int main()
 	scav1.takeDamage(20);
 
 	scav2.meleeAttack("Marvin");
-	robot1.takeDamage(30);
+	robot1.takeDamage(20);
 
 	robot2.vaulthunter_dot_exe("pink_kitten");
 	scav2.takeDamage(30);
@@ -25,6 +25,7 @@ int main()
 
 	scav2.beRepaired(30);
 
+	scav1.challengeNewcomer("Marvin");
 	scav1.challengeNewcomer("Marvin");
 
 	robot2.vaulthunter_dot_exe("pink_kitten");

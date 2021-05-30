@@ -23,7 +23,7 @@ public:
 	ScavTrap(void);
 	ScavTrap(std::string name);
 	ScavTrap(ScavTrap const &);
-	~ScavTrap(void);
+	virtual ~ScavTrap(void);
 	ScavTrap & operator=( ScavTrap const & );
 	void smell_toe(std::string const &);
 	void running_naked(std::string const &);
