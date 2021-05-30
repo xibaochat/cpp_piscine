@@ -1,7 +1,7 @@
 # include "FragTrap.hpp"
 # include "ClapTrap.hpp"
 
-FragTrap::FragTrap(void):Claptraps(100, 100, 100, 100, 1, "anonymous guy", 30, 20, 5)
+FragTrap::FragTrap(void)
 {
 	std::cout << "Frag-TP Defaut constructor is called" << std::endl;
 	return ;

@@ -1,7 +1,7 @@
 # include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void):Claptraps(100, 100, 50, 50, 1, "anonymous guy", 20, 15, 3)
+ScavTrap::ScavTrap(void)
 {
 	std::cout << "SCAV-TP defaut Constructor in called." << std::endl;
 	return ;

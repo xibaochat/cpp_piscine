@@ -36,6 +36,5 @@ int main()
 	robot1.show_info();
 	scav1.show_info();
 	std::cout << CYAN <<  "---------DESTRUCTOR------" << NC << std::endl;
-
 	return (0);
 }
