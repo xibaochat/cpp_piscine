@@ -7,13 +7,13 @@ ScavTrap::ScavTrap(void)
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string name): Claptraps(100, 100, 50, 50, 1, name, 20, 15, 3)
+ScavTrap::ScavTrap(std::string name): ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3)
 {
 	std::cout << "SCAV-TP Constructor :" << BLUE << name << NC << std::endl;
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src):Claptraps(src){
+ScavTrap::ScavTrap(ScavTrap const &src):ClapTrap(src){
 	return ;}
 
 ScavTrap::~ScavTrap(void)

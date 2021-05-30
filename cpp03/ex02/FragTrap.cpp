@@ -8,13 +8,13 @@ FragTrap::FragTrap(void)
 }
 
 FragTrap::FragTrap(std::string name)
-	: Claptraps(100, 100, 100, 100, 1, name, 30, 20, 5)
+	: ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
 {
 	std::cout << "Frag-TP Constructor :" << BLUE << name<< NC << std::endl;
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap const &src): Claptraps(src){return ;}
+FragTrap::FragTrap(FragTrap const &src): ClapTrap(src){return ;}
 
 FragTrap::~FragTrap(void)
 {
@@ -53,4 +53,5 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 	}
 	else
 		std::cout << "FR4G-TP " << BLUE << this->_name << YELLOW << " a plus d'energie pour lancer cette action :(..." << NC << std::endl;
+	return ;
 }

@@ -17,7 +17,7 @@
 #define BLUE		"\033[1;34m"
 #define NC          "\033[0m"
 
-class ScavTrap: public Claptraps
+class ScavTrap: public ClapTrap
 {
 public:
 	ScavTrap(void);

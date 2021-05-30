@@ -15,7 +15,7 @@
 #define BLUE		"\033[1;34m"
 #define NC          "\033[0m"
 #define CYAN         "\e[36m"
-class Claptraps
+class ClapTrap
 {
 protected:
 	std::string _name;
@@ -29,11 +29,11 @@ protected:
 	unsigned int _armor_damage_reduction;
 
 public:
-	Claptraps(void);
-	Claptraps(int, int, int, int, int, std::string, unsigned int, unsigned int, unsigned int);
-	Claptraps(Claptraps const &);
-	virtual ~Claptraps(void);
-	Claptraps & operator=( Claptraps const & );
+	ClapTrap(void);
+	ClapTrap(int, int, int, int, int, std::string, unsigned int, unsigned int, unsigned int);
+	ClapTrap(ClapTrap const &);
+	virtual ~ClapTrap(void);
+	ClapTrap & operator=( ClapTrap const & );
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);
