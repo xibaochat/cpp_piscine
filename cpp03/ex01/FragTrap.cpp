@@ -65,7 +65,7 @@ void FragTrap::meleeAttack(std::string const & target)
 //be hited by others
 void FragTrap::takeDamage(unsigned int amount)
 {
-	if (this->_hit_points + this->_armor_damage_reduction - (int)amount >= 0)
+	if (this->_hit_points + this->_armor_damage_reduction >= (int)amount)
 	{
 		this->_hit_points += this->_armor_damage_reduction - amount;
 		std::cout << "FR4G-TP " << RED << this->_name << NC << " lost " << RED << (amount - this->_armor_damage_reduction) << NC << " points damage" << std::endl << "NOW " << RED << this->_name << NC << " HP is: " << GREEN << this->_hit_points  << NC << std::endl << std::endl;

@@ -8,8 +8,22 @@ void ClapTrap::show_info(void)
 }
 
 ClapTrap::ClapTrap(void){
-	std::cout << "ClapTrap defaut constructoris called" << std::endl;
+	std::cout << "Clap-TP defaut constructoris called" << std::endl;
 	return ;}
+
+ClapTrap::ClapTrap(std::string name):_name(name)
+{
+	set_hp(0);
+	set_max_hp(0);
+	set_ep(0);
+	set_max_ep(0);
+	set_level(1);
+	set_range_attack_damage(0);
+	set_melee_attack_damage(0);
+	set_armor_damage_reduction(0);
+	std::cout << "Clap-TP parameter with name:" << BLUE << name << NC << " constructoris called" << std::endl;
+
+}
 
 ClapTrap::ClapTrap(
 	int hp,
@@ -84,7 +98,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	else
 	{
 		this->_hit_points = 0;
-		std::cout << YELLOW << "SOS " RED << this->_name << NC << " a plus de HP" << std::endl;
+		std::cout << YELLOW << "SOS " RED << this->_name << NC << " a plus de HP\n" << std::endl;
 	}
 
 	return ;
