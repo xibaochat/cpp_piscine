@@ -17,3 +17,6 @@ public:
 };
 
 #endif
+
+//reference: https://www.learncpp.com/cpp-tutorial/virtual-base-classes/
+//https://stackoverflow.com/questions/8419120/adding-virtual-removes-the-error-type-base-is-not-a-direct-base-of-derived-c/8419204

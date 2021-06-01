@@ -19,7 +19,7 @@ SuperTrap::SuperTrap(std::string name)
 		name,
 		60,
 		20,
-		5), FragTrap(name), NinjaTrap(name)//frag and ninja won't call ClapTrap car on a met "virtual public ClapTrap"
+		5), FragTrap(name), NinjaTrap(name)//frag and ninja won't call ClapTrap car on a met "virtual public ClapTrap in header file"
 {
 	std::cout << "SuperTrap Constructor :" << BLUE << name<< NC << std::endl;
 	return ;

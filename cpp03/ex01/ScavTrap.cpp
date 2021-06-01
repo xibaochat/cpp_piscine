@@ -4,14 +4,15 @@
 void ScavTrap::show_info(void)
 {
 	std::cout << "name:" << BLUE << this->_name << NC << std::endl;
-	std::cout << "HP     :" << GREEN << this->_hit_points << NC << std::endl;
-	std::cout << "EP     :" << YELLOW << this->_energy_points << NC << std::endl;
+	std::cout << "HP     :" << GREEN << this->_hit_points << "/" << this->_max_hit_points << NC << std::endl;
+	std::cout << "EP     :" << YELLOW << this->_energy_points << "/" << this->_max_energy_points << NC << std::endl;
+
 	return ;
 }
 
 ScavTrap::ScavTrap(void)
 {
-	std::cout <<  "Scav-TP a " << BLUE << "passager" << NC << "come to see what is happening" << std::endl;
+	std::cout <<  "SCAV-TP a " << BLUE << "passager" << NC << "come to see what is happening" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name):_name(name)
@@ -24,7 +25,7 @@ ScavTrap::ScavTrap(std::string name):_name(name)
 	this->_melee_attack_damage = 20;
 	this->_ranged_attack_damage = 15;
 	this->_armor_damage_reduction = 3;
-	std::cout << "Il y a un nouveau et bete volontaire: " << BLUE << name << NC << \
+	std::cout << "SCAV-TP un nouveau et bete volontaire: " << BLUE << name << NC << \
 		" n'ose pas mourire. \nOn verra sa triste histoire" << std::endl;
 	return ;
 }
@@ -43,6 +44,8 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 {
+	if (this == &rhs)
+		return (*this);
 	this->_name = rhs._name;
 	this->_hit_points = rhs._hit_points;
 	this->_max_hit_points = rhs._max_hit_points;
@@ -135,7 +138,7 @@ void ScavTrap::challengeNewcomer(std::string const & target)
 	{
 		(this->*(action[rand_index]))(target);
 		this->_energy_points -= 25;
-		std::cout << "SCAV-TP " << BLUE << this->_name << YELLOW << " lost 25 EP " << NC << std::endl;;
+		std::cout << "SCAV-TP " << BLUE << this->_name << YELLOW << " EP: " << this->_energy_points << NC << std::endl;;
 	}
 	else
 		std::cout << "SCAV-TP " << BLUE << this->_name << YELLOW << " a plus d'energie pour lancer cette action :(..." << NC << std::endl;

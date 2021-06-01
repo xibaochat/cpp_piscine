@@ -24,16 +24,9 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 {
-	this->_name = rhs._name;
-	this->_hit_points = rhs._hit_points;
-	this->_max_hit_points = rhs._max_hit_points;
-	this->_energy_points = rhs._energy_points;
-	this->_max_energy_points = rhs._max_energy_points;
-	this->_level = rhs._level;
-	this->_melee_attack_damage = rhs._melee_attack_damage;
-	this->_ranged_attack_damage = rhs._ranged_attack_damage;
-	this->_armor_damage_reduction = rhs._armor_damage_reduction;
-	return (*this);
+	if (this != &rhs)
+        ClapTrap::operator=(rhs);
+    return (*this);
 }
 
 void ScavTrap::smell_toe(std::string const & target)
@@ -73,6 +66,13 @@ void ScavTrap::challengeNewcomer(std::string const & target)
 
 	rand_index = rand() % 5;
 	action_MemFn action[5] = {&ScavTrap::smell_toe, &ScavTrap::running_naked, &ScavTrap::touch_dirty_fish, &ScavTrap::kiss_from_a_snake, &ScavTrap::let_u_pass};
-	(this->*(action[rand_index]))(target);
+	if (this->_energy_points >= 25)
+	{
+		(this->*(action[rand_index]))(target);
+		this->_energy_points -= 25;
+		std::cout << "SCAV-TP " << BLUE << this->_name << YELLOW << " EP: " << this->_energy_points << NC << std::endl;;
+	}
+	else
+		std::cout << "SCAV-TP " << BLUE << this->_name << YELLOW << " a plus d'energie pour lancer cette action :(..." << NC << std::endl;
 	return ;
 }

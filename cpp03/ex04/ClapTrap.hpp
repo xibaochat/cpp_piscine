@@ -20,14 +20,14 @@
 class ClapTrap
 {
 protected:
-	std::string _name;
 	int _hit_points;
 	int _max_hit_points;
 	int _energy_points;
 	int _max_energy_points;
 	int _level;
-	unsigned int _ranged_attack_damage;
+	std::string _name;
 	unsigned int _melee_attack_damage;
+	unsigned int _ranged_attack_damage;
 	unsigned int _armor_damage_reduction;
 
 public:

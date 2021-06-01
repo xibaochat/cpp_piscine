@@ -24,16 +24,9 @@ NinjaTrap::~NinjaTrap(void)
 
 NinjaTrap & NinjaTrap::operator=(NinjaTrap const & rhs)
 {
-	this->_name = rhs._name;
-	this->_hit_points = rhs._hit_points;
-	this->_max_hit_points = rhs._max_hit_points;
-	this->_energy_points = rhs._energy_points;
-	this->_max_energy_points = rhs._max_energy_points;
-	this->_level = rhs._level;
-	this->_melee_attack_damage = rhs._melee_attack_damage;
-	this->_ranged_attack_damage = rhs._ranged_attack_damage;
-	this->_armor_damage_reduction = rhs._armor_damage_reduction;
-	return (*this);
+	if (this != &rhs)
+        ClapTrap::operator=(rhs);
+    return (*this);
 }
 
 void NinjaTrap::ninjaShoebox(FragTrap &obj)

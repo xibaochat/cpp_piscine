@@ -3,8 +3,9 @@
 void ClapTrap::show_info(void)
 {
 	std::cout << "name:" << BLUE << this->_name << NC << std::endl;
-	std::cout << "HP     :" << GREEN << this->_hit_points << NC << std::endl;
-	std::cout << "EP     :" << YELLOW << this->_energy_points << NC << std::endl;
+	std::cout << "HP     :" << GREEN << this->_hit_points << "/" << this->_max_hit_points << NC << std::endl;
+	std::cout << "EP     :" << YELLOW << this->_energy_points << "/" << this->_max_energy_points << NC << std::endl;
+	return ;
 }
 
 ClapTrap::ClapTrap(void){
@@ -90,7 +91,7 @@ void ClapTrap::meleeAttack(std::string const & target)
 //be hited by others
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->_hit_points + this->_armor_damage_reduction >= (int)amount)
+	if (this->_hit_points + (int)this->_armor_damage_reduction >= (int)amount)
 	{
 		this->_hit_points += this->_armor_damage_reduction - amount;
 		std::cout << "ClapTrap " << RED << this->_name << NC << " lost " << RED << (amount - this->_armor_damage_reduction) << NC << " points damage" << std::endl << "NOW " << RED << this->_name << NC << " HP is: " << GREEN << this->_hit_points  << NC << std::endl << std::endl;

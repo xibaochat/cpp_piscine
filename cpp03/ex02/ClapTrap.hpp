@@ -15,17 +15,18 @@
 #define BLUE		"\033[1;34m"
 #define NC          "\033[0m"
 #define CYAN         "\e[36m"
+
 class ClapTrap
 {
 protected:
-	std::string _name;
 	int _hit_points;
 	int _max_hit_points;
 	int _energy_points;
 	int _max_energy_points;
 	int _level;
-	unsigned int _ranged_attack_damage;
+	std::string _name;
 	unsigned int _melee_attack_damage;
+	unsigned int _ranged_attack_damage;
 	unsigned int _armor_damage_reduction;
 
 public:
@@ -64,3 +65,5 @@ public:
 };
 
 #endif
+
+// the most derived destructor will be called first and then the rest of derived classes in reversed order of construction. it is to make sure all memory has been properly cleaned.

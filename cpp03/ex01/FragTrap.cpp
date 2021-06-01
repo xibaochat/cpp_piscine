@@ -3,8 +3,9 @@
 void FragTrap::show_info(void)
 {
 	std::cout << "name:" << BLUE << this->_name << NC << std::endl;
-	std::cout << "HP     :" << GREEN << this->_hit_points << NC << std::endl;
-	std::cout << "EP     :" << YELLOW << this->_energy_points << NC << std::endl;
+	std::cout << "HP     :" << GREEN << this->_hit_points << "/" << this->_max_hit_points << NC << std::endl;
+	std::cout << "EP     :" << YELLOW << this->_energy_points << "/" << this->_max_energy_points << NC << std::endl;
+
 }
 
 FragTrap::FragTrap(void){
