@@ -23,19 +23,19 @@ Sorcerer & Sorcerer::operator=(Sorcerer const & rhs)
 
 std::ostream & operator<<(std::ostream & o, Sorcerer const & rhs)
 {
-    o << GREEN << "[Sorcerer presentation] " << NC << "I am " << rhs.get_name() << ", " << rhs.get_title() << ", and I like ponies!";
+    o << CYAN << "[Sorcerer presentation] " << NC << "I am " << RED << rhs.get_name() << NC << ", " << MAGENTA << rhs.get_title() << NC << ", and I like ponies!" << std::endl;
     return (o);
 }
 
 Sorcerer::Sorcerer(std::string name, std::string title):_name(name), _title(title)
 {
-	std::cout << GREEN << "[Sorcerer constructor ] " << RED << name << NC << ", " << MAGENTA << title << NC << ", " << YELLOW << "is born!" << NC << std::endl;
+	std::cout << CYAN << "[Sorcerer constructor ] " << RED << name << NC << ", " << MAGENTA << title << NC << ", " << YELLOW << "is born!" << NC << std::endl;
 	return ;
 }
 
 Sorcerer::~Sorcerer(void)
 {
-	std::cout << GREEN << "[Sorcerer destructor  ] " << NC << this->_name << ", " << this->_title << ", is dead. Consequences will never be the same!" << std::endl;
+	std::cout << CYAN << "[Sorcerer destructor  ] " << RED << this->_name << NC << ", " << MAGENTA << this->_title << NC <<  ", is dead. Consequences will never be the same!" << std::endl;
 	return ;
 }
 
