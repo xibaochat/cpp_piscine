@@ -9,7 +9,7 @@ Monster_zhube::Monster_zhube(void):Enemy(40, "Monster_zhube")
 
 Monster_zhube::~Monster_zhube(void)
 {
-	std::cout << "* see you soon:( *" << std::endl;
+	std::cout << "🐖 * see you soon:( *" << std::endl;
 	return ;
 }
 
