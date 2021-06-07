@@ -12,7 +12,7 @@ Victim::Victim(Victim const &src)
 	return ;
 }
 
-std::string const & Victim::get_name() const
+std::string Victim::get_name() const
 {
 	return (this->_name);
 }

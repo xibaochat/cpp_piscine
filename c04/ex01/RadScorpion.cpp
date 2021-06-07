@@ -21,10 +21,3 @@ RadScorpion & RadScorpion::operator=( RadScorpion const & rhs)
         Enemy::operator=(rhs);
 	return (*this);
 }
-
-void RadScorpion::takeDamage(int damage)
-{
-	damage -= 3;
-	Enemy::takeDamage(damage);
-	return ;
-}

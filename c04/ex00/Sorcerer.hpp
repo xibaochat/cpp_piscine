@@ -25,7 +25,6 @@ private:
 	std::string _name;
 	std::string _title;
 	Sorcerer(void);
-protected:
 
 public:
 	Sorcerer(std::string, std::string);
@@ -33,8 +32,8 @@ public:
 	~Sorcerer(void);
 	Sorcerer & operator=( Sorcerer const &);
 	Sorcerer & operator<<( Sorcerer const &);
-	std::string const & get_name() const;
-	std::string const & get_title() const;
+	std::string get_name() const;
+	std::string get_title() const;
 	void polymorph(Victim const &) const;
 };
 

@@ -27,7 +27,6 @@ private:
 
 protected:
 	AWeapon(void);
-
 public:
 	AWeapon(std::string const & name, int apcost, int damage);
 	virtual ~AWeapon();

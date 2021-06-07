@@ -2,6 +2,7 @@
 #include "Enemy.hpp"
 #include "Character.hpp"
 
+
 Character::Character(){return ;}
 
 Character::~Character(){}
@@ -26,14 +27,31 @@ void Character::recoverAP()
 
 void Character::attack(Enemy *enemy)
 {
-	std::cout << this->_name << " attacks " << enemy->getType() << " with a " << this->weapon_ptr->getName() << std::endl;
-	if (this->weapon_ptr)
+	if (!this->weapon_ptr)
 	{
+		std::cout << BLUE << "[ERR]" << NC "No weapon" << std::endl;
+		return ;
+	}
+	else
+	{
+		if (this->getAp() < this->weapon_ptr->getAPCost())
+		{
+			std::cout << RED << "🍔[SOS]" << NC "Not enough AP to attack" << std::endl;
+			return ;
+		}
+		std::cout << RED << "[attck]" << NC << this->_name << " attacks " << enemy->getType() << " with a " << this->weapon_ptr->getName() << std::endl;
 		this->weapon_ptr->attack();
 		enemy->takeDamage(this->weapon_ptr->getDamage());
 		this->_ap -= this->weapon_ptr->getAPCost();
 		if (enemy->getHP() <= 0)
+		{
 			delete (enemy);
+			enemy = NULL;
+			std::cout << "😁 enemy is dead" << std::endl;
+			return ;
+		}
+		std::cout << "enemy has HP: " << enemy->getHP() << std::endl;
+		return ;
 	}
 	return ;
 }
@@ -52,8 +70,8 @@ AWeapon *Character::get_weapon_ptr() const
 std::ostream & operator<<(std::ostream & o, Character const & rhs)
 {
 	if (rhs.get_weapon_ptr())
-		o << rhs.getName() << " has " << rhs.getAp() << " AP and wields a " << rhs.get_weapon_ptr()->getName() << std::endl;
+		o << BLUE << "[me]" << NC << rhs.getName() << " has " << rhs.getAp() << " AP and wields a " << rhs.get_weapon_ptr()->getName() << std::endl;
 	else
-		o << rhs.getName() << " has " << rhs.getAp() << " AP and is unarmed" << std::endl;
+		o << BLUE << "[me]" << NC << rhs.getName() << " has " << rhs.getAp() << " AP and is unarmed" << std::endl;
 	return (o);
 }

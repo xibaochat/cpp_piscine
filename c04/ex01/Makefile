@@ -1,6 +1,7 @@
 SRC = main.cpp  AWeapon.cpp Character.cpp Enemy.cpp \
 	PlasmaRifle.cpp PowerFist.cpp \
-	RadScorpion.cpp SuperMutant.cpp
+	RadScorpion.cpp SuperMutant.cpp\
+	Monster_zhube.cpp Kitten_bite.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

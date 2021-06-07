@@ -3,9 +3,11 @@
 Enemy::Enemy(void){return ;}
 
 Enemy::Enemy(int hp, std::string const & type):_hp(hp), _type(type)
-{return ;}
+{
+	return ;}
 
-Enemy::~Enemy(void){return ;}
+Enemy::~Enemy(void){
+	return ;}
 
 Enemy::Enemy(Enemy const & rhs){
 	*this = rhs;

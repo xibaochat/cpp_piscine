@@ -39,12 +39,12 @@ Sorcerer::~Sorcerer(void)
 	return ;
 }
 
-std::string const & Sorcerer::get_name() const
+std::string Sorcerer::get_name() const
 {
 	return (this->_name);
 }
 
-std::string const & Sorcerer::get_title() const
+std::string Sorcerer::get_title() const
 {
 	return (this->_title);
 }

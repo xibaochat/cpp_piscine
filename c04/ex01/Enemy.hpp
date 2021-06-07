@@ -31,9 +31,9 @@ public:
 	virtual ~Enemy();
 	Enemy (Enemy const &);
 	Enemy & operator=( Enemy const &);
-	int getHP() const;
 	std::string getType() const;
 	virtual void takeDamage(int);
+	int getHP() const;
 };
 
 #endif

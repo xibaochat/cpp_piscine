@@ -11,7 +11,6 @@ public:
 	~RadScorpion();
 	RadScorpion( RadScorpion const & );
 	RadScorpion & operator=( RadScorpion const & );
-	void takeDamage(int);
 };
 
 #endif
