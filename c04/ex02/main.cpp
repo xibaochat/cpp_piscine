@@ -20,26 +20,6 @@ int main()
 	}
 	delete vlc;
 
-	// AssaultTerminator   *Gracia = new AssaultTerminator;
-	// ISpaceMarine        *Poppuri = new AssaultTerminator(*Gracia);
-
-    // TacticalMarine      *Ally = new TacticalMarine;
-    // ISpaceMarine        *Bella = new TacticalMarine(*Ally);
-
-    // ISquad              *Team = new Squad;
-
-    // Team->push(Poppuri);
-    // Team->push(Bella);
-
-    // std::cout << std::endl;
-
-    // std::cout << "Delete primary Assault & Tactical:" << std::endl << std::endl;
-    // delete Gracia;
-    // delete Ally;
-
-    // std::cout << std::endl << "Delete Team:" << std::endl << std::endl;
-    // delete Team;
-
 	std::cout << "------TEST------" << std::endl;
 	ISpaceMarine *ass_obj = new AssaultTerminator;
 	AssaultTerminator *ass_obj1 = new AssaultTerminator;
@@ -64,7 +44,7 @@ int main()
 	Team->push(tac_obj3);
 	std::cout << "Team has " << Team->getCount() << " units" << std::endl;
 
-	delete Team;
+ 	delete Team;
 
 	return 0;
 }

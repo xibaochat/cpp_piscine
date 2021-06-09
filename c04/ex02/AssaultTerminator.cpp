@@ -26,7 +26,7 @@ AssaultTerminator & AssaultTerminator::operator=( AssaultTerminator const & rhs)
 	return (*this);
 }
 
-AssaultTerminator* AssaultTerminator:: clone() const
+ISpaceMarine* AssaultTerminator:: clone() const
 {
 	return (new AssaultTerminator(*this));
 }

@@ -26,7 +26,7 @@ TacticalMarine & TacticalMarine::operator= (TacticalMarine const & rhs)
 	return (*this);
 }
 
-TacticalMarine* TacticalMarine::clone() const
+ISpaceMarine* TacticalMarine::clone() const
 {
 	return (new TacticalMarine(*this));
 }

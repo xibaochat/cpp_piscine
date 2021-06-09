@@ -11,7 +11,7 @@ public:
 	AssaultTerminator & operator= ( AssaultTerminator const &);
 	AssaultTerminator(AssaultTerminator const &);
 
-	AssaultTerminator* clone() const;
+	ISpaceMarine* clone() const;
 	void battleCry() const;
 	void rangedAttack() const;
 	void meleeAttack() const;
