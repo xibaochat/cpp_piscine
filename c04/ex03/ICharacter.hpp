@@ -1,3 +1,4 @@
+
 #ifndef ICHARACTER_H
 # define ICHARACTER_H
 
