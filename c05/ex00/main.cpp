@@ -3,33 +3,43 @@
 int main()
 {
 	try
-	{
-		Bureaucrat obj("sesame", 160);
-		std::cout << "obj: " << obj << std::endl;
-	}
-	catch (std::exception const &e)
-	{
-		std::cerr << e.what() << std::endl << std::endl;
-	}
-	try
-	{
-		Bureaucrat obj1("sesame_frere", 150);
-		std::cout << "obj1: " << obj1 << std::endl;
-		obj1.increment();
-	}
-	catch (std::exception const &e)
-	{
-		std::cerr << e.what() << std::endl << std::endl;
-	}
-	try
-	{
-		Bureaucrat obj2("Sesame_mam", 1);
-		std::cout << "obj2: " << obj2 << std::endl;
-		obj2.decrement();
-	}
-	catch (std::exception const &e)
-	{
-		std::cerr << e.what() << std::endl << std::endl;
-	}
+    {
+        Bureaucrat  bureaucrat("Sesame", 5);
+
+        std::cout << bureaucrat << std::endl;
+		bureaucrat.increment();
+        std::cout << bureaucrat << std::endl;
+    }
+    catch(std::exception const &e)
+    {
+        std::cerr << RED << e.what() << NC << std::endl;
+    }
+
+    try
+    {
+     	Bureaucrat  bureaucrat1("Sesame_mam", 1);
+		std::cout << bureaucrat1 << std::endl;
+		bureaucrat1.increment();
+		std::cout << bureaucrat1 << std::endl;
+    }
+    catch(std::exception const &e)
+    {
+		std::cerr << RED << e.what() << NC << std::endl;
+    }
+    try
+    {
+     	Bureaucrat  bureaucrat1("Sesame_papa", 149);
+
+		std::cout << bureaucrat1 << std::endl;
+		bureaucrat1.decrement();
+		std::cout << bureaucrat1 << std::endl;
+		bureaucrat1.decrement();
+		std::cout << bureaucrat1 << std::endl;
+
+    }
+	catch(std::exception const &e)
+    {
+		std::cerr << RED << e.what() << NC << std::endl;
+    }
 	return (0);
 }

@@ -47,7 +47,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src)
 
 std::ostream & operator << (std::ostream & o, Bureaucrat  const & src)
 {
-	o << src.getName() << " :" << src.getGrade() << std::endl;
+	o << BLUE << "[Name] " NC << src.getName() << "😀" << BLUE << " [Grade]:" << NC << src.getGrade() << std::endl;
 	return (o);
 }
 
