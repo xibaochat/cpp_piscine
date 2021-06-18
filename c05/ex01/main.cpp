@@ -2,57 +2,48 @@
 #include "Form.hpp"
 int main()
 {
+	std::cout << "----TEST 1-----" << std::endl;
 	try
 	{
-		Form f("ff", 100, 100);
-		Bureaucrat b("baby", 150);
-		std::cout << f << b << std::endl;
-		b.signForm(f);
+		Form("ff", 1222, 1);
 	}
-	catch(std::exception const &e)
+	catch(std::exception &e)
 	{
-		std::cerr << "In first module:" << RED << e.what() << NC << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
+	std::cout << "----TEST 2-----" << std::endl;
 	try
 	{
-		Form f("ff", 180, 100);
+		Bureaucrat bb("bb", 1);
+		Form ff("ff", 9, 9);
+		std::cout << bb << ff << std::endl;
+		try
+		{
+			bb.increment();
+			bb.increment();
+			bb.increment();
+			bb.signForm(ff);
+		}
+		catch (std::exception &e)
+		{
+			 std::cerr << e.what() << std::endl;
+		}
 	}
-	catch(std::exception const &e)
+	catch(std::exception &e)
 	{
-		std::cerr << "In second module" << RED << e.what() << NC << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
+
 	try
 	{
-		Form f("ff", -180, 100);
-	}
-	catch(std::exception const &e)
-	{
-		std::cerr << "In third module" << RED << e.what() << NC << std::endl;
-	}
-	try
-	{
-		Form ff("ff", 10, 12);
-		Bureaucrat bb("bb", 2);
-		std::cout << ff << bb << std::endl;
-		ff.beSigned(bb);
+		Bureaucrat bb("bb", 10);
+		Form ff("ff", 100, 100);
 		bb.signForm(ff);
-		Form obj = ff;
-		std::cout << obj << std::endl;
-	}
-	catch(std::exception const &e)
-	{
-		std::cerr << "In fouth module" << RED << e.what() << NC << std::endl;
-	}
-	try
-	{
-		Form ff("ff", 1, 1);
-		Bureaucrat bb("bb", 150);
-		ff.beSigned(bb);
 		bb.signForm(ff);
 	}
-	catch(std::exception const &e)
+	catch (std::exception &e)
 	{
-		std::cerr << "In fifth module" << RED << e.what() << NC << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	return (0);
 }

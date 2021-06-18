@@ -68,14 +68,18 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 
 void Bureaucrat::signForm(Form &src)
 {
-	if (src.is_signed())
+	if (src.is_signed() == true)
 		std::cout << "bureaucrat:" << this->_name << " can't sign " << src.getName() << " because it is already signed" << std::endl;
-	else if (this->_grade > src.get_signed_grade())
-		std::cout << "bureaucrat:" << this->_name << " can't sign " << src.getName() << " because Bureaucrat is lower than Form" << std::endl;
 	else
 	{
-		std::cout << "bureaucrat:" << this->_name << " sign " << src.getName() << std::endl;
+		try
+		{
+			src.beSigned(*this);
+			std::cout << "bureaucrat:" << this->_name << " sign " << src.getName() << std::endl;
+		}
+		catch(std::exception &e)
+		{
+			std::cerr << RED << e.what() << NC << " bureaucrat:" << this->_name << " can't sign " << src.getName() << " because Bureaucrat is lower than Form" << std::endl;
+		}
 	}
-	src.beSigned(*this);
-
 }
