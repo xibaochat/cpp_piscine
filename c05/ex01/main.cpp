@@ -9,7 +9,7 @@ int main()
 	}
 	catch(std::exception &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << RED << e.what() << NC << std::endl;
 	}
 	std::cout << "----TEST 2-----" << std::endl;
 	try

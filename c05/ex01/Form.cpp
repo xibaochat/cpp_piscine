@@ -33,13 +33,16 @@ Form::Form(Form const &src):_name(src._name), _sign_grade(src._sign_grade), _exe
 
 void Form::beSigned(Bureaucrat &src)
 {
-	if (src.getGrade() < this->_sign_grade)
-		this->_is_signed = 1;
-	else
-	{
-		throw(GradeTooLowException());
+	if (this->_is_signed == false)
+    {
+        if (src.getGrade() < this->_sign_grade)
+            this->_is_signed = 1;
+        else
+		{
+			throw(GradeTooLowException());
+		}
 	}
-	return ;
+    return ;
 }
 
 std::string const & Form::getName() const

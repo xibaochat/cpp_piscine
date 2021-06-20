@@ -49,11 +49,14 @@ int const & Form::get_exe_grade() const {return this->_exe_grade;}
 
 void Form::beSigned(Bureaucrat &src)
 {
-	if (src.getGrade() < this->_sign_grade)
-		this->_is_signed = 1;
-	else
+	if (this->_is_signed == false)
 	{
-		throw(GradeTooLowException());
+		if (src.getGrade() < this->_sign_grade)
+			this->_is_signed = 1;
+		else
+		{
+			throw(GradeTooLowException());
+		}
 	}
 	return ;
 }
@@ -62,7 +65,7 @@ void Form::execute(Bureaucrat const & executor) const
 {
 	if (this->_is_signed == false)
 		throw(Form_sign());
-	if (this->_sign_grade < executor.getGrade())
+	if (this->_exe_grade < executor.getGrade())
 		throw(GradeTooLowException());
 	this->beExecuted();
 }
