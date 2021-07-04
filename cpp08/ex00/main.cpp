@@ -13,6 +13,8 @@ int main()
 {
 	std::vector<int> v;
 	std::list<int> l{1,2,3};
+	std::deque<int>		deq;
+
 	v.push_back(10);
 	v.push_back(20);
 	v.push_back(30);
@@ -69,6 +71,26 @@ int main()
         std::cout << "Element Found" << std::endl;
     }
     catch(std::exception &bc)
+    {
+        std::cout << "Cannot Find Element" << std::endl;
+    }
+
+	std::cout << "------Deque test-----------" << std::endl;
+	for ( int i = 0 ; i < 10 ; i++ )
+        deq.push_back(i);
+	try
+    {
+		std::cout << "Want to find 4 ";
+        easyfind(deq, 4);
+		std::cout << "Element Found" << std::endl;
+		std::cout << "Want to find 8 ";
+        easyfind(deq, 8);
+		std::cout << "Element Found" << std::endl;
+		std::cout << "Want to find 12 ";
+        easyfind(deq, 12);
+		std::cout << "Element Found" << std::endl;
+    }
+    catch (std::exception & e)
     {
         std::cout << "Cannot Find Element" << std::endl;
     }
