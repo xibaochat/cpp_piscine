@@ -21,3 +21,14 @@
 </td>
 </tr>
 </table>
+
+### overview
+**day** |  **what I learned**       | 
+:-----------:|:----------------:|
+day00|namespace, stdio stream, class & instance, member attributes & functions, non-member attributes & functions, this pointer, initialization list, static, const, accessor/getters, class vs. struct|
+day01|new and delete, references, file streams, lifetime, scope|
+day02|Ad-hoc polymorphism/function overload, operators overload, canonical classes, copy constructor|
+day03|inheritance, access specifier, multiple inheritance, the diamond problem|
+day04|subtype polymorphism, abstract classes, interfaces, virtual keyword|
+day05|exceptions|
+day06|static_cast, dynamic_cast, reintepretate_cast, const_cast|
