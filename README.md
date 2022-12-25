@@ -1,7 +1,7 @@
 <h1 align="center">
-     <b font size="15" face="arial" >42 c++ piscine<br><br></font></b></h1>
+     <b font size="15" face="arial" >42 c++ piscine</font></b></h1>
      <p align="center">
-   </br></br>
+   </br>
    </p>    
   <p align="center">
  <img src="https://img.shields.io/badge/c++-007ACC?style=for-the-badge&logo=c++&logoColor=white">
@@ -32,3 +32,5 @@ day03|inheritance, access specifier, multiple inheritance, the diamond problem|
 day04|subtype polymorphism, abstract classes, interfaces, virtual keyword|
 day05|exceptions|
 day06|static_cast, dynamic_cast, reintepretate_cast, const_cast|
+day07|templates (function & class)
+day08|STL containers and algorithms
