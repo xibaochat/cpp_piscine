@@ -29,7 +29,4 @@ private:
 
 };
 
-
-
-
 #endif
